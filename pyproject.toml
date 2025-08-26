@@ -1,0 +1,31 @@
+[project]
+name = "alpha-beta-crown"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.11.13"
+dependencies = [
+    "auto-lirpa",
+    "onnx2pytorch",
+    "onnxoptimizer>=0.3.13",
+    "onnxruntime>=1.22.1",
+    "pandas>=2.3.2",
+    "psutil>=7.0.0",
+    "setuptools>=80.9.0",
+    "skl2onnx>=1.19.1",
+    "sortedcontainers>=2.4.0",
+    "torch>=2.3.1",
+]
+
+[tool.basedpyright]
+include = ["complete_verifier"]
+exclude = [
+    "**/__pycache__",
+]
+pythonVersion = "3.11.13"
+pythonPlatform = "MacOS"
+typeCheckingMode = "standard"
+
+[tool.uv.sources]
+auto-lirpa = { git = "https://github.com/Verified-Intelligence/auto_LiRPA", rev = "cf0169ce6bfb4fddd82cfff5c259c162a23ad03c" }
+onnx2pytorch = { git = "https://github.com/Verified-Intelligence/onnx2pytorch", rev = "8afb2243fddd1a4732883f1e2959f7e83f8201c5" }
