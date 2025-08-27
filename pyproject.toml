@@ -17,15 +17,24 @@ dependencies = [
     "torch>=2.3.1",
 ]
 
-[tool.basedpyright]
-include = ["complete_verifier"]
-exclude = [
-    "**/__pycache__",
-]
-pythonVersion = "3.11.13"
-pythonPlatform = "MacOS"
-typeCheckingMode = "standard"
+# [project.scripts]
+# abcrown = "complete_verifier:crown"
 
 [tool.uv.sources]
 auto-lirpa = { git = "https://github.com/Verified-Intelligence/auto_LiRPA", rev = "cf0169ce6bfb4fddd82cfff5c259c162a23ad03c" }
 onnx2pytorch = { git = "https://github.com/Verified-Intelligence/onnx2pytorch", rev = "8afb2243fddd1a4732883f1e2959f7e83f8201c5" }
+
+[tool.uv.build-backend]
+module-name = "complete_verifier"
+module-root = ""
+
+[tool.basedpyright]
+include = ["complete_verifier"]
+exclude = ["**/__pycache__"]
+pythonVersion = "3.11.13"
+pythonPlatform = "MacOS"
+typeCheckingMode = "standard"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
